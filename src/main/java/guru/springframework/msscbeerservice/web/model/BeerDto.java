@@ -16,6 +16,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+//defensive coding - bean validation constrains
 public class BeerDto {
     @Null
     private UUID id;
