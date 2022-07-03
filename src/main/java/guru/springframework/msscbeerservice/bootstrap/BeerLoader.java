@@ -2,6 +2,7 @@ package guru.springframework.msscbeerservice.bootstrap;
 
 import guru.springframework.msscbeerservice.domain.Beer;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
