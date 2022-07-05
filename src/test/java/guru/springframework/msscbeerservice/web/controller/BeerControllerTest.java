@@ -23,6 +23,7 @@ import java.util.UUID;
 
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
@@ -58,7 +59,7 @@ class BeerControllerTest {
 
     @Test
     void getBeerById() throws Exception {
-        given(beerService.getById(any())).willReturn(validDto);
+        given(beerService.getById(any(),anyBoolean())).willReturn(validDto);
         mockMvc.perform(RestDocumentationRequestBuilders.get("/api/v1/beer/{beerId}" , UUID.randomUUID().toString())
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
