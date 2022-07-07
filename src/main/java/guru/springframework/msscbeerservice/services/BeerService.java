@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.UUID;
 
 public interface BeerService {
+    BeerDto getByUpc(String upc);
     BeerDto getById(UUID beerId, Boolean showInventoryOnHand);
 
     BeerDto saveNewBeer(BeerDto beerDto);

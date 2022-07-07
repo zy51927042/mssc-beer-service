@@ -27,6 +27,14 @@ import java.util.stream.Collectors;
 public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
     private final BeerMapper beerMapper;
+
+    @Cacheable(cacheNames = "beerUpcCache",key = "#upc")
+    @Override
+    public BeerDto getByUpc(String upc) {
+        System.out.println("I was called");
+        return beerMapper.beerToBeerDto(beerRepository.findByUpc(upc).orElseThrow(NotFoundException::new));
+    }
+
     @Cacheable(cacheNames = "beerCache",key = "#beerId", condition = "#showInventoryOnHand == false")
     @Override
     public BeerDto getById(UUID beerId, Boolean showInventoryOnHand) {
