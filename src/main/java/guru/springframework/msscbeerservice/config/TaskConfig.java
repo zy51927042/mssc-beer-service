@@ -1,4 +1,4 @@
-package guru.springframework.msscbeerservice.Config;
+package guru.springframework.msscbeerservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
