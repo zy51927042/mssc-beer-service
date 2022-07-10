@@ -2,13 +2,11 @@ package guru.springframework.msscbeerservice.bootstrap;
 
 import guru.springframework.msscbeerservice.domain.Beer;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
-import guru.springframework.msscbeerservice.web.model.BeerStyleEnum;
-import org.hibernate.exception.ConstraintViolationException;
+import guru.sfg.brewery.model.BeerStyleEnum;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 @Component
 public class BeerLoader implements CommandLineRunner {
